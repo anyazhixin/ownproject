@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.anya.own">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
+
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <dubbo:application name="com.anya.own" owner="wwl" organization="anya"  version="1.0.0"/>
+    <!-- 启动时不检测 -->
+    <dubbo:consumer check="false" />
+    <!-- 注册中心配置 -->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" timeout="10000"
+                    file="F:\server.dubbo" register="true" />
+    <!-- dubbo暴露地址 -->
+    <dubbo:protocol name="dubbo" port="20990" />
+    <!-- 监控的地址从注册中心中找 -->
+    <dubbo:monitor protocol="registry" />
+    <!-- 提供方默认配置 -->
+    <dubbo:provider timeout="10000" group="dev" />
+    <!-- 注解扫描服务 -->
+    <dubbo:annotation package="com.anya.own.service" />
+
+    <bean id="propertyConfigure" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:global-config-file.properties" />
+    </bean>
+
+    <bean id="LogHandler" class="com.anya.own.handler.InOutLogHandler" />
+    <bean id="XssHandler" class="com.anya.own.handler.XssHandler" />
+
+    <aop:config>
+        <aop:pointcut id="dubboService" expression="execution(* com.anya.own.service.*.*(..))"/>
+        <aop:aspect ref="LogHandler">
+            <aop:around method="handleDubboMethod" pointcut-ref="dubboService"/>
+        </aop:aspect>
+        <aop:aspect ref="XssHandler">
+            <aop:around method="cleanXss" pointcut-ref="dubboService" />
+        </aop:aspect>
+    </aop:config>
+    
+    <import resource="spring-mybatis.xml" />
+
+</beans>

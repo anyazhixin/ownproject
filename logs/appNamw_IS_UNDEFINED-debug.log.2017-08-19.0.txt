@@ -1,0 +1,219 @@
+2017-08-19 14:07:32.423 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:07:33.812 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:07:34.932 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:08:37.640 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:08:38.713 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:08:39.647 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:08:46.943 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:08:47.080 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:08:47.081 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:08:48.957 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:08:48.976 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:08:49.230 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@77c1e611] will be managed by Spring 
+2017-08-19 14:08:49.278 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:08:49.399 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:08:49.471 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:08:49.474 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:08:49.578 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:08:49.579 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:08:49.581 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:08:49.622 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：4097
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 
+2017-08-19 14:09:36.731 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:09:37.851 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:09:38.799 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:09:45.812 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:09:45.929 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:09:45.932 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:09:48.273 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:09:48.287 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:09:48.418 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@18d003cd] will be managed by Spring 
+2017-08-19 14:09:48.441 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:09:48.592 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:09:48.656 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:09:48.658 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:09:48.766 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:09:48.767 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:09:48.768 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:09:48.803 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：3831
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 
+2017-08-19 14:12:30.492 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:12:31.802 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:12:32.784 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:12:40.063 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:12:40.206 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:12:40.211 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:12:42.443 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:12:42.463 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:12:42.691 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@77c1e611] will be managed by Spring 
+2017-08-19 14:12:42.710 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:12:42.831 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:12:42.904 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:12:42.908 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:12:43.032 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:12:43.034 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:12:43.036 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:12:43.087 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：3756
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 
+2017-08-19 14:14:20.104 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:14:21.050 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:14:21.926 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:14:27.575 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:14:27.623 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:14:27.625 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:14:29.560 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:14:29.581 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:14:29.714 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@18d003cd] will be managed by Spring 
+2017-08-19 14:14:29.744 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:14:29.849 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:14:29.900 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:14:29.902 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:14:29.999 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:14:30.001 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:14:30.002 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:14:30.040 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：3214
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 
+2017-08-19 14:21:00.305 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:21:01.349 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:21:02.162 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:21:07.315 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:21:07.350 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:21:07.351 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:21:08.539 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:21:08.562 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:21:08.739 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@18d003cd] will be managed by Spring 
+2017-08-19 14:21:08.759 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:21:08.859 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:21:08.921 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:21:08.925 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:21:09.023 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:21:09.026 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:21:09.028 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f95881a] 
+2017-08-19 14:21:09.065 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：2165
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 
+2017-08-19 14:21:39.073 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:21:40.005 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:21:40.859 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:21:46.187 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:21:46.243 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:21:46.247 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:21:47.427 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:21:47.443 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:21:47.579 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@77c1e611] will be managed by Spring 
+2017-08-19 14:21:47.592 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:21:47.694 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:21:47.768 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:21:47.770 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:21:47.920 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:21:47.925 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:21:47.930 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:21:48.008 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：2167
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 
+2017-08-19 14:23:27.868 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:23:28.873 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:23:29.826 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:23:35.312 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:23:35.421 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:23:35.423 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:23:37.311 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:23:37.332 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4519f676] 
+2017-08-19 14:23:37.501 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7c20cdd0] will be managed by Spring 
+2017-08-19 14:23:37.523 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:23:37.676 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:23:37.754 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:23:37.758 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4519f676] 
+2017-08-19 14:23:37.894 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4519f676] 
+2017-08-19 14:23:37.897 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4519f676] 
+2017-08-19 14:23:37.899 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4519f676] 
+2017-08-19 14:23:37.935 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：3264
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 
+2017-08-19 14:24:33.237 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:24:34.303 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:24:35.283 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:24:40.906 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:24:40.951 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:24:40.955 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:24:42.095 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:24:42.112 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:24:42.259 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@77c1e611] will be managed by Spring 
+2017-08-19 14:24:42.273 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:24:42.468 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:24:42.517 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:24:42.519 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:24:42.607 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:24:42.608 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:24:42.609 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a2d9f9] 
+2017-08-19 14:24:42.646 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：2156
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 
+2017-08-19 14:25:13.618 [TxId :  , SpanId : ] [DEBUG] org.apache.ibatis.logging.LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2017-08-19 14:25:14.939 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:410 - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration 
+2017-08-19 14:25:15.997 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionFactoryBean:529 - Parsed mapper file: 'file [F:\ownproject\sample-dao\target\classes\com\anya\own\dao\mapper\test\UserDOMapper.xml]' 
+2017-08-19 14:25:23.206 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:51 - 
+【请求】SOA方法： Result com.anya.own.service.NameService.getUser(Request) 请求参数：
+{"data":{"name":"李四"}}
+ 
+2017-08-19 14:25:23.262 [TxId :  , SpanId : ] [DEBUG] com.anya.own.handler.XssHandler:45 - 入参：李四 ,转义后：李四 
+2017-08-19 14:25:23.264 [TxId :  , SpanId : ] [DEBUG] com.anya.own.service.NameServiceImpl:30 - getName入参：李四 
+2017-08-19 14:25:24.615 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:97 - Creating a new SqlSession 
+2017-08-19 14:25:24.636 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:128 - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de7e193] 
+2017-08-19 14:25:24.832 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction:87 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2c63762b] will be managed by Spring 
+2017-08-19 14:25:24.914 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==>  Preparing: select 'true' as QUERYID, id, name, sex, age, address from user WHERE ( name = ? )  
+2017-08-19 14:25:25.079 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - ==> Parameters: 李四(String) 
+2017-08-19 14:25:25.156 [TxId :  , SpanId : ] [DEBUG] com.anya.own.dao.mapper.test.UserDOMapper.selectByExample:159 - <==      Total: 1 
+2017-08-19 14:25:25.159 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:186 - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de7e193] 
+2017-08-19 14:25:30.936 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:284 - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de7e193] 
+2017-08-19 14:25:30.937 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:310 - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de7e193] 
+2017-08-19 14:25:30.938 [TxId :  , SpanId : ] [DEBUG] org.mybatis.spring.SqlSessionUtils:315 - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de7e193] 
+2017-08-19 14:25:30.974 [TxId :  , SpanId : ] [INFO ] com.anya.own.handler.InOutLogHandler:37 - 
+【响应】 Result com.anya.own.service.NameService.getUser(Request)
+耗时：8383
+ 返回参数 {"success":true,"code":null,"description":null,"data":{"id":2,"name":"李四","sex":"女","age":18,"address":"上海"}}
+ 

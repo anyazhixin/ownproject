@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <bean id="testSourceWrite" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatistest?useSSL=false" />
+        <property name="username" value="root" />
+        <property name="password" value="zlb261202" />
+        <property name="initialSize" value="5" />
+        <property name="maxActive" value="20" />
+        <property name="minIdle" value="5" />
+        <!-- 被丢弃的数据库连接是否做记录 -->
+        <property name="logAbandoned" value="${jdbc.db.logAbandoned:true}"/>
+        <!-- 是否自动回收超时连接 -->
+        <property name="removeAbandoned" value="${jdbc.db.removeAbandoned:true}" />
+        <!-- 泄露的连接可以被删除的超时值, 单位秒 -->
+        <property name="removeAbandonedTimeout" value="${jdbc.db.removeAbandonedTimeout:30}" />
+        <!--maxWait: 超时等待时间以毫秒为单位  -->
+        <property name="maxWait" value="${jdbc.db.maxWait:3000}" />
+        <!-- 指明是否在从池中取出连接前进行检验，如果检验失败，则从池中去除连接并尝试取出另一个。注意: 设置为true后如果要生效，validationQuery参数必须设置为非空字符串 -->
+        <property name="testOnBorrow" value="${jdbc.db.testOnBorrow:false}" />
+        <!-- SQL查询,用来验证从连接池取出的连接,在将连接返回给调用者之前.如果指定,则查询必须是一个SQL SELECT并且必须返回至少一行记录 -->
+        <property name="validationQuery" value="SELECT 1" />
+        <!-- 指明连接是否被空闲连接回收器(如果有)进行检验。如果检测失败，则连接将被从池中去除。 -->
+        <property name="testWhileIdle" value="${jdbc.db.testWhileIdle:true}" />
+        <!-- 在空闲连接回收器线程运行期间休眠的时间值，以毫秒为单位 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${jdbc.db.timeBetweenEvictionRunsMillis:10000}" />
+        <!-- 连接在池中保持空闲而不被空闲连接回收器线程，回收的最小时间值，单位毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${jdbc.db.minEvictableIdleTimeMillis:30000}" />
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="stat" />
+        <!-- druid连接属性配置 -->
+        <property name="connectionProperties" value="druid.stat.slowSqlMillis=100"/>
+    </bean>
+
+    <bean id="testSourceRead" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatistestus?SSL=false" />
+        <property name="username" value="root" />
+        <property name="password" value="zlb261202" />
+        <property name="initialSize" value="5" />
+        <property name="maxActive" value="20" />
+        <property name="minIdle" value="5" />
+        <!-- 被丢弃的数据库连接是否做记录 -->
+        <property name="logAbandoned" value="${jdbc.db.logAbandoned:true}"/>
+        <!-- 是否自动回收超时连接 -->
+        <property name="removeAbandoned" value="${jdbc.db.removeAbandoned:true}" />
+        <!-- 泄露的连接可以被删除的超时值, 单位秒 -->
+        <property name="removeAbandonedTimeout" value="${jdbc.db.removeAbandonedTimeout:30}" />
+        <!--maxWait: 超时等待时间以毫秒为单位  -->
+        <property name="maxWait" value="${jdbc.db.maxWait:3000}" />
+        <!-- 指明是否在从池中取出连接前进行检验，如果检验失败，则从池中去除连接并尝试取出另一个。注意: 设置为true后如果要生效，validationQuery参数必须设置为非空字符串 -->
+        <property name="testOnBorrow" value="${jdbc.db.testOnBorrow:false}" />
+        <!-- SQL查询,用来验证从连接池取出的连接,在将连接返回给调用者之前.如果指定,则查询必须是一个SQL SELECT并且必须返回至少一行记录 -->
+        <property name="validationQuery" value="SELECT 1" />
+        <!-- 指明连接是否被空闲连接回收器(如果有)进行检验。如果检测失败，则连接将被从池中去除。 -->
+        <property name="testWhileIdle" value="${jdbc.db.testWhileIdle:true}" />
+        <!-- 在空闲连接回收器线程运行期间休眠的时间值，以毫秒为单位 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${jdbc.db.timeBetweenEvictionRunsMillis:10000}" />
+        <!-- 连接在池中保持空闲而不被空闲连接回收器线程，回收的最小时间值，单位毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${jdbc.db.minEvictableIdleTimeMillis:30000}" />
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="stat" />
+        <!-- druid连接属性配置 -->
+        <property name="connectionProperties" value="druid.stat.slowSqlMillis=100"/>
+    </bean>
+
+    <bean id="dynamicDataSource" class="com.anya.own.common.dao.DynamicDataSource">
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <entry key="mybatistestWrite" value-ref="testSourceWrite" />
+                <entry key="mybatistestRead" value-ref="testSourceRead" />
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="testSourceWrite" />
+    </bean>
+
+    <bean id="mysessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dynamicDataSource" />
+        <property name="mapperLocations">
+            <array>
+                <value>classpath*:com/anya/own/dao/mapper/*/*.xml</value>
+            </array>
+        </property>
+    </bean>
+
+    <!-- 扫描接口 -->
+    <bean id="scannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.anya.own.dao.mapper,com.anya.own.dao.custom.mapper" />
+        <property name="sqlSessionFactoryBeanName" value="mysessionFactory" />
+    </bean>
+
+    <!-- 事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="testSourceWrite" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="appName" value="sample-dubbo" />
+    <property name="logFile.root" value="F:\logs" />
+    <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [TxId : %X{PtxId} , SpanId : %X{PspanId}] [%-5p] %logger:%L - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="adapter_debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logFile.root}/${appName}-debug.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMisMatch>DENY</onMisMatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logFile.root}/${appNamw}-debug.log.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>30MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [TxId : %X{PtxId} , SpanId : %X{PspanId}] [%-5p] %logger:%L - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="${root.level}">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="adapter_debug" />
+    </root>
+</configuration>
